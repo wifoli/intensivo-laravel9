@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'image',
     ];
 
     /**
@@ -53,7 +54,7 @@ class User extends Authenticatable
 
         return $query
             ->with('comments')
-            ->get();
+            ->paginate();
     }
 
     public function comments()
